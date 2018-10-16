@@ -1,0 +1,133 @@
+import java.util.Scanner;
+
+import java.util.Random;
+
+public class main {
+
+public static void main(String[] args){
+    
+    char[][]array = new char[10][10]; //Character list
+    
+    int Thing;// The character
+    int random;//Where the character is positioned
+    int random2;// The randomness of the ecstasy or trreasure
+    int random3;//The position of both character and ecstasy
+    String moveSelect;//allowing it to move and also i move and it selects where i am going
+    boolean Input = true;
+
+    int alt = 1;// The minimum of the position
+    int crtl = 9;// The maximum of the position
+
+    Random Line = new Random();// The code to tell what to do with the randomness
+    
+    Thing = Line.nextInt(crtl - alt + 1) + alt;
+    //
+    random = Line.nextInt(crtl - alt + 1) + alt;
+    //
+    random2 = Line.nextInt(crtl - alt + 1) + alt;
+    
+    random3 = Line.nextInt(crtl- alt + 1) + alt;
+
+    array[Thing][random] = '?';//The ecstasy and if it interacts then you get it and it dissapears 
+    
+    array[random2][random3] = '@';//You
+    // What to do with the char list and what each character used for during the game
+    for (char[] array1 : array) {
+        for (int i = 0; i < array.length; i++) {
+            if(array1[i]!= array[Thing][random] && array1[i] != array[random2][random3]) {
+         
+                array1[i] = '.';
+            }               
+            System.out.print(array1[i]);
+        }      
+        System.out.println(".");  
+    }
+    System.out.println("You have entered wonderland and need to survive for as long as you have to.");
+    
+    //Telling that keypresses exsits and what to do with it
+        
+    Scanner userinput = new Scanner(System.in);
+     
+    moveSelect = userinput.nextLine();
+    
+    //The Keypresses of what to do
+    
+    if(moveSelect.equals("w")){ 
+
+            //If keypresses with array, The player and random equals array, you and the movement is moved up by one with random 2, then you have moved up, therefore it is true. 
+            array[Thing][random] = array[Thing+1][random2];
+            
+            array[Thing][random3] = '.';
+            
+            Input = true;      
+        }
+        else if ( moveSelect.equals("a"))
+        {
+                
+            array[Thing][random] = array[Thing][random2-1];
+
+            array[Thing][random3] = '.';
+            
+            Input = true;
+        } 
+        
+        else if ( moveSelect.equals("s")){
+          
+            array[Thing][random] = array[Thing-1][random2];
+            
+            array[Thing][random3] = '.';
+            
+            Input = true;
+        }
+        else if (moveSelect.equals("d"))
+        {
+            
+            array[Thing][random] = array[Thing][random2+1];
+            
+            array[Thing][random3] = '.';
+
+            Input = true;
+        }
+        else
+        {
+            System.out.println("Thou is wrong.");
+            
+            Input = false;
+        }
+    
+        while(Input = true){  //Keep on going after thing
+        for(int y = 0; y < 10; y++){
+            for(int x = 0; x < 10; x++){
+                array[Thing][random3] = ".";                
+                }
+            }    
+        }
+
+    }
+}
+
+class thing(int x, int y){
+    int x1 = 0; 
+    int y1 = 0;
+    char symbol = '@';
+    
+    this.x = x1;
+    
+    this.y = y1;
+ 
+public int getX(){
+    return x;
+    }
+
+public int getY(){
+    return y;
+    }
+
+public void setY(int y){
+    this.y = y;
+    }
+
+public void setX(int x){
+    this.x = x;
+        }
+}
