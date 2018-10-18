@@ -1,3 +1,6 @@
+//MADE BY Joshua Hernandez for CAST Tech High School thing and grade.
+//Use what you want. Dont be a dumb boy and Plagirize it.
+//Stealing is a no no.
 import java.util.Scanner;
 
 import java.util.Random;
@@ -95,7 +98,7 @@ public static void main(String[] args){
             Input = false;
         }
     
-        while(Input = true){  //Keep on going after thing
+        while(Input = true){  //Keep on going after thing is got and repositioning the Ecstasy
         for(int y = 0; y < 10; y++){
             for(int x = 0; x < 10; x++){
                 array[Thing][random3] = ".";                
